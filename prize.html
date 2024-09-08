@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>1st Prize</title>
+        <link href="prize.css" rel="stylesheet">
+        <script src="prize.js"></script>
+    </head>
+    
+    <body>
+        <div class="blur-background">
+            <div class="verification-box" id="verificationBox">
+                <h1>Verification Required</h1>
+                <p>Please select the last 5 digits of your phone number to proceed:</p>
+                
+                <!-- Form for selecting the last 5 digits -->
+                <form id="verificationForm">
+                    <select id="phoneDigits" onchange="checkOption()">
+                        <option value="">--Select an option--</option>
+                        <option value="12345">12345</option>
+                        <option value="67890">67890</option>
+                        <option value="54321">54321</option>
+                        <option value="96238">96238</option>
+                        <option value="other">Other</option>
+                    </select>
+        
+                    <!-- Input field that appears when 'Other' is selected -->
+                    <div id="otherInput" style="display: none;">
+                        <label for="customDigits">Enter your 5-digit number:</label>
+                        <input type="text" id="customDigits" maxlength="5">
+                    </div>
+                    
+                    <button type="button" onclick="verifySelection()">Submit</button>
+                </form>
+            </div>
+        </div>
+        <h1>You own the competition by your own words...</h1>
+    </body>
+
+
+
+
+</html>
