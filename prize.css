@@ -6,9 +6,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: scroll;
     background: url('your-background-image.jpg') no-repeat center center fixed; /* Replace with your own background image */
     background-size: cover;
+}
+
+video#background-video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+   
+    z-index: -1;
 }
 
 /* Container that holds the background and the box */
@@ -19,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px); /* Apply blur to the background */
+    backdrop-filter: blur(1px); /* Apply blur to the background */
 }
 
 /* Verification box styling */
@@ -73,3 +83,22 @@ body {
 .clear-background {
     backdrop-filter: none; /* Remove the blur effect */
 }
+
+#loading-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  #loading-video {
+    object-fit: cover; /* Make sure the video covers the screen */
+  }
+  
+  #landing-page {
+    display: none; /* Hidden initially until video finishes */
+  }
