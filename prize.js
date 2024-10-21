@@ -20,14 +20,16 @@ function verifySelection() {
     const verificationBox = document.getElementById('verificationBox');
 
     if (selectBox.value === correctAnswer) {
-        alert('Correct! You can enter the website.');
+        
         verificationBox.classList.add('hidden'); // Apply dissolve effect
         document.body.classList.add('clear-background'); // Remove blur effect
+        window.location.href = 'birthday wish/poem.html';
     } else if (selectBox.value === 'other') {
         if (customDigits === correctAnswer) {
-            alert('Correct! You can enter the website.');
+            
             verificationBox.classList.add('hidden'); // Apply dissolve effect
             document.body.classList.add('clear-background'); // Remove blur effect
+            window.location.href = 'birthday wish/poem.html';
         } else {
             alert('Incorrect answer. Please try again.');
         }
@@ -35,3 +37,4 @@ function verifySelection() {
         alert('Incorrect selection. Please try again.');
     }
 }
+
