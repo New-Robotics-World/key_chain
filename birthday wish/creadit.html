@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attention</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ac57f7ce;
+            padding: 10px 0;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        
+        header nav a  {
+            font-family: monospace;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        header nav a span:hover {
+            text-decoration: underline;
+        }
+        video{
+            width: 50%;
+        }
+        
+        #layout{
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 35px;
+            padding-top: 25px;
+            
+        }
+        img{
+            width: 40%;
+        }
+        #row{
+            column-gap: 5%;
+        }
+        
+.attention-box {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a18cd1 100%);
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s forwards;
+}
+
+.attention-box h2 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 31px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.attention-box p {
+    font-size: 23px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.attention-box .highlight {
+    font-weight: bold;
+    color: #ffeb3b;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.attention-box .footer {
+    font-size: 25px;
+    font-style: italic;
+    margin-top: 10px;
+    color: #ffeb3b;
+}
+
+.attention-box.hidden {
+    animation: fadeOut 1s forwards;
+}
+video#background-video {
+            position: fixed;
+            right: 0;
+            top: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }   
+    </style>
+</head>
+<body>
+
+    <video autoplay muted      loop id="background-video">
+        <source src="assets/attention video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gifts.html">Gifts</a>
+            <a href="creadit.html">Creadits</a>
+            
+        </nav>
+    </header>
+    
+    
+    <div id="layout">
+        <div id="row">
+            <img src="assets/creadit gg2.jpg">
+            <img src="assets/creadit gg1.jpg">
+            
+        </div>
+        <div id="row">
+            
+            <img src="assets/creadit me.jpg">
+            <img src="assets/creadit sam.jpg">
+        </div>
+        <div id="row2">
+            
+            <img id="longimg" src="assets/creadit st1.jpg">
+            <video autoplay muted controls id="mg_video">
+                <source src="assets/making video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="attention-box" id="attentionBox">
+        <h2>🎉 My friends! 🎉</h2>
+        <p>
+            My friends give a big support for select the gift and give suggetion. A special✨ thank you for 
+            <span class="highlight">GG </span>, <span class="highlight">Sathya </span>sister and <span class="highlight">Sam </span>. 
+            They help me to make this <span class="highlight">gift</span>. They are being a part in the above photos and videos.<br>
+        </p>
+        <p class="footer">Thank you guys...🎁✨</p>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <script>
+        alert("There is a video in this page. unmute the video before play it.")
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const attentionBox = document.getElementById('attentionBox');
+
+    // Show the box when the page loads
+    attentionBox.style.opacity = 1;
+
+    // Add click event listener to the box to hide it when clicked
+    attentionBox.addEventListener('click', function() {
+        attentionBox.classList.add('hidden');
+    });
+
+    // Add click event listener to the entire document to hide the box when anywhere on the page is clicked
+    document.addEventListener('click', function(e) {
+        if (e.target !== attentionBox && !attentionBox.contains(e.target)) {
+            attentionBox.classList.add('hidden');
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

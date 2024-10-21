@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifts</title>
+    <link href="assets/gift.png" rel="icon" with="40px" >
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+           
+        }
+        header {
+            background-color: #ac57f7ce;
+            padding: 10px 0;
+            color: white;
+            position: relative;
+            z-index: 2;
+            
+        }
+        .clue-box {
+            font-size: 35px;
+            text-wrap:balance;
+            font-family: Brush Script;
+            color: #ff4500;
+            margin-top: 50px;
+            animation: rainbow 3s infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes rainbow {
+            0% { color: #ff4500; }
+            20% { color: #ffa500; }
+            40% { color: #ffd700; }
+            60% { color: #adff2f; }
+            80% { color: #00ff7f; }
+            100% { color: #1e90ff; }
+        }
+        
+    header nav a  {
+        font-family: monospace;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+
+    header nav a :hover {
+        text-decoration: underline;
+    }
+
+        .gift-box {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            cursor: pointer;
+            position: relative;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+
+        video#background-video {
+            position: fixed;
+            right: 0;
+            top: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.9); }
+}
+
+.attention-box {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a18cd1 100%);
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s forwards;
+}
+
+.attention-box h2 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 31px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.attention-box p {
+    font-size: 23px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.attention-box .highlight {
+    font-weight: bold;
+    color: #ffeb3b;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.attention-box .footer {
+    font-size: 25px;
+    font-style: italic;
+    margin-top: 10px;
+    color: #ffeb3b;
+}
+
+.attention-box.hidden {
+    animation: fadeOut 1s forwards;
+}
+
+
+    </style>
+    
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="assets/gift.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gifts.html">Gifts</a>
+            <a href="creadit.html">Creadits</a>
+            
+        </nav>
+    </header>
+    <h1>Find Your Gifts!</h1>
+    <img src="assets/gift.png" alt="Gift Box" class="gift-box" id="giftBox">
+
+    <div class="clue-box" id="clueBox">
+        <!-- Clues will appear here -->
+    </div>
+
+    <div class="attention-box" id="attentionBox">
+        <h2>🎉 Your Adventure Awaits! 🎉</h2>
+        <p>
+            You've entered a world full of surprises! This key chain is the 
+            <span class="highlight">special </span> and <span class="highlight">secret </span>key. 
+            This key will use full when the right time comes.<br>Now click the above gift box till it shows <span class="highlight">END</span>.
+            The message comes one by one.<br>
+        </p>
+        <p class="footer">The surprise will come soon...🎁✨</p>
+    </div>
+    
+    <script>
+        const clues = [
+            "Hi 👋",
+            "It's a special✨ day for you...",
+            "So enjoy 🥳 every second...",
+            "Once again 😅",
+            "Happy Birthday! 🎉🎂",
+            "🤩🥳..END..🤡😇"
+        ];
+
+        let currentClueIndex = 0;
+
+        document.getElementById('giftBox').addEventListener('click', function() {
+            if (currentClueIndex < clues.length) {
+                document.getElementById('clueBox').innerText = clues[currentClueIndex];
+                currentClueIndex++;
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('toggleDecoder').addEventListener('click', function(event) {
+            event.preventDefault();
+            const iframe = document.createElement('iframe');
+            iframe.src = 'decoders.html';
+            iframe.width = '35%';
+            iframe.height = '50%';
+            iframe.style.position = 'fixed';
+            iframe.style.bottom = '0';
+            iframe.style.left = '0';
+            iframe.style.zIndex = '1000';
+            iframe.style.border = 'none';
+            iframe.style.borderRadius= '20%';
+            document.body.appendChild(iframe);
+    
+            // Optional: Close iframe on clicking outside
+            document.addEventListener('click', function(e) {
+                if (!iframe.contains(e.target) && e.target.id !== 'toggleDecoder') {
+                    document.body.removeChild(iframe);
+                }
+            });
+        });
+    
+        document.addEventListener("DOMContentLoaded", function() {
+    const attentionBox = document.getElementById('attentionBox');
+
+    // Show the box when the page loads
+    attentionBox.style.opacity = 1;
+
+    // Add click event listener to the box to hide it when clicked
+    attentionBox.addEventListener('click', function() {
+        attentionBox.classList.add('hidden');
+    });
+
+    // Add click event listener to the entire document to hide the box when anywhere on the page is clicked
+    document.addEventListener('click', function(e) {
+        if (e.target !== attentionBox && !attentionBox.contains(e.target)) {
+            attentionBox.classList.add('hidden');
+        }
+    });
+});
+
+
+
+    </script>
+</body>
+</html>

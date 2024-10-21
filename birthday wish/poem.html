@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Your Poem</title>
+        <link src="assets/pen.jpg" rel="stylesheet">
+        <style>
+            body{
+                
+                border: 2px;
+                border-style: dotted;
+                height: 100%;
+                
+                align-items: center;
+            }
+            h1{ color: antiquewhite;
+                font-size:4.2em ;
+            }
+            p{  color: antiquewhite;
+                font-size: 3.5em;
+            }
+            h3{
+                color: antiquewhite;
+            }
+            img{
+                width: 45em;
+                overflow: scroll;
+            }
+            video#background-video {
+                position: fixed;
+                right: 0;
+                top: 0;
+                max-width: 100%;
+                min-height: 100%;
+                z-index: -1;
+            }   
+
+            .animation-container {
+            display: flex;
+            flex-wrap: nowrap;
+            
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cake {
+            width: 30%;
+            height: auto;
+            margin: 20px;
+            display: inline-block;
+            animation: zoom 3s infinite;
+        }
+        @media(min-width:600px)
+        {.animation-container .cake{width: 20%;}}
+
+        @keyframes zoom {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes moveAndZoom {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.1); }
+            50% { transform: translate(0, 20px) scale(1.2); }
+            75% { transform: translate(-20px, -20px) scale(1.1); }
+        }
+        #message {
+            display: none; /* Hide the message initially */
+        }
+        </style>
+    </head>
+
+    <body>
+        <video autoplay muted      loop id="background-video">
+            <source src="assets/attention video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <center><h1>Congratulation dude😇</h1></center>
+        <br>
+        <br>
+        <br>
+        <center><p>You own the competition by Your Own word.</p></center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        
+        <img src="assets/poem.jpg" alt="poem">
+       
+        <div id="message">
+            <center> <h3>You have received a message rigth now.<br>Click the notification img <br>to open the message </h3></center>
+            <center><div class="animation-container">
+                <a href="index.html"><img src="assets/message.png" alt="Birthday Cake" class="cake"></a>
+            </div></center>
+        </div>
+
+        <script>
+            window.onload = function() {
+                setTimeout(function() {
+                    document.getElementById('message').style.display = 'block';
+                }, 3000); // 10 seconds delay
+            }
+        </script>
+    </body>
+
+</html>
