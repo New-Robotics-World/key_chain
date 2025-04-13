@@ -40,7 +40,7 @@ body {
   }
   
 .hidden {
-    display: hide;
+    display: none;
   }
   
   #startButton {
