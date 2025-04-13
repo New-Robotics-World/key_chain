@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#000428, #004e92); /* nice gradient */
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .gif-character {
+    width: 200px;
+    animation: zoomIn 2s ease forwards;
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .message-box {
+    margin-top: 30px;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+.hidden {
+    display: none;
+  }
+  
+  #startButton {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 20px;
+    background-color: #ff007f;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  #startButton:hover {
+    background-color: #e60073;
+  }
+  
+
+  #stars-background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  }
+  
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: blink 2s infinite ease-in-out;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+  
+  /* Shooting stars */
+  .shooting-star {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(-45deg, white, rgba(255, 255, 255, 0));
+    animation: shoot 1s linear forwards;
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
+  
+  @keyframes shoot {
+    0% {
+      transform: translateX(0) translateY(0) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-600px) translateY(600px) rotate(45deg);
+      opacity: 0;
+    }
+  }
+  
