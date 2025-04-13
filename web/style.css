@@ -15,7 +15,7 @@ body {
   }
   
   .gif-character {
-    width: 200px;
+    width: 800px;
     animation: zoomIn 2s ease forwards;
   }
   
@@ -32,7 +32,7 @@ body {
   
   .message-box {
     margin-top: 30px;
-    font-size: 24px;
+    font-size: 84px;
     color: white;
     text-align: center;
     opacity: 0;
@@ -40,13 +40,13 @@ body {
   }
   
 .hidden {
-    display: none;
+    display: inline;
   }
   
   #startButton {
     margin-top: 20px;
     padding: 12px 24px;
-    font-size: 20px;
+    font-size: 80px;
     background-color: #ff007f;
     color: white;
     border: none;
