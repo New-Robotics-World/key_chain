@@ -4,10 +4,10 @@ function checkPassword(giftNumber) {
     const nextBtn = document.getElementById('nextBtn');
   
     const correctPasswords = {
-      1: 'school',
-      2: 'coffee',
-      21: 'loosu',
-      3: 'sunset'
+      1: 'podi',
+      2: 'happy',
+      21: 'birthday',
+      3: 'noooo'
     };
   
     if (input === correctPasswords[giftNumber]) {
