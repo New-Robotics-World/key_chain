@@ -1,0 +1,165 @@
+body {
+    background: #0b0c2a;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .gift-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .question {
+    font-size: 84px;
+    margin-bottom: 40px;
+  }
+  
+  .treasure-image {
+    width: 500px;
+    animation:
+      flashIn 1s ease-in-out,
+      blink 2s infinite,
+      zoomInOut 4s infinite;
+    margin-bottom: 30px;
+  }
+  
+  .password-input {
+    padding: 10px 20px;
+    font-size: 50px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #222;
+    color: white;
+    box-shadow: 0 0 8px #fff2;
+  }
+  
+  /* Flash effect */
+  @keyframes flashIn {
+    0% {
+      opacity: 0;
+      transform: scale(2) rotate(15deg);
+      filter: brightness(300%);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+      filter: brightness(100%);
+    }
+  }
+  
+  /* Blinking */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+  
+  /* Zoom In and Out */
+  @keyframes zoomInOut {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
+  
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .open-gift-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffcc00;
+    display: none; /* hidden by default */
+    transition: transform 0.3s;
+  }
+  
+  .open-gift-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    font-size: 56px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+  
+
+  @keyframes blinkZoomShine {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+      background-color: #ffcc00;
+      box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    }
+    25% {
+      opacity: 0.9;
+      transform: scale(1.1);
+      background-color: #ff66cc;
+      box-shadow: 0 0 12px #ff66cc, 0 0 24px #ff66cc;
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+      background-color: #66ccff;
+      box-shadow: 0 0 14px #66ccff, 0 0 28px #66ccff;
+    }
+    75% {
+      opacity: 0.9;
+      transform: scale(1.1);
+      background-color: #00ffcc;
+      box-shadow: 0 0 12px #00ffcc, 0 0 24px #00ffcc;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      background-color: #ffcc00;
+      box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    }
+  }
+  
+  .open-gift-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 14px 28px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    display: none;
+    animation: blinkZoomShine 2.5s infinite ease-in-out;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  

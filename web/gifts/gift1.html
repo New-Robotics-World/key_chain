@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gift 1</title>
+  <link rel="stylesheet" href="gift.css">
+</head>
+<body>
+  <div class="gift-container">
+    <div class="question">My name starts with 'D' and ends with 'i'. There is a clg which has my name. Find me, Who I am?    "Get the password form me" </div>
+
+    <div class="image-container">
+      <img src="images/treasure.png" class="treasure-image" alt="Treasure">
+      <a href="assets/gift1.mp4" target="_blank" class="open-gift-btn" id="openGiftBtn">🎁 Open Gift</a>
+    </div>
+
+    <input type="text" id="password" class="password-input" placeholder="Enter Password">
+    <br />
+    <button class="submit-btn" onclick="checkPassword(1)">Submit</button>
+
+    <br><br>
+    <a href="gift2.html" class="submit-btn" id="nextBtn" style="display:none;">➡️ Next Treasure</a>
+  </div>
+
+  <script src="gift.js"></script>
+</body>
+</html>
